@@ -35,7 +35,7 @@ export class LuckyWheelComponent {
     
   }
   getListPrize(){
-    this.http.get('http://localhost:3000/user/getListPrizes', {
+    this.http.get('http://localhost:8080/user/getListPrizes', {
     }).subscribe(data => {
       //console.log(this.listPrizes)
       this.listPrizes= JSON.parse(JSON.stringify(data))['listPrizes'];
