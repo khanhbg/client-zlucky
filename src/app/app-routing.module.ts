@@ -4,12 +4,13 @@ import { LoginComponent } from '../app/login/login.component';
 import { LuckyWheelComponent } from '../app/lucky-wheel/lucky-wheel.component';
 import { HomeComponent } from '../app/home/home.component';
 import { RegisterComponent } from '../app/register/register.component';
-
+import {ProfileComponent} from '../app/profile/profile.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'luckyWheel', component: LuckyWheelComponent},
+  { path: 'profile', component: ProfileComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

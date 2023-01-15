@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     try {
       let phoneNumber = document.getElementById("login_phoneNumber") as HTMLInputElement;
       let password = document.getElementById("login_password") as HTMLInputElement;
-      this.http.post<any>('http://localhost:3000/user/login', {
+      this.http.post<any>('https://zolucky.onrender.com/user/login', {
         phoneNumber: phoneNumber.value,
         password: password.value,
       }, {

@@ -13,6 +13,7 @@ import { LuckyWheelComponent } from './lucky-wheel/lucky-wheel.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { RegisterComponent } from './register/register.component';
     HeaderComponent,
     HomeComponent,
     RegisterComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
