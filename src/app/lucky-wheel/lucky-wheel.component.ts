@@ -35,7 +35,7 @@ export class LuckyWheelComponent {
     
   }
   getListPrize(){
-    this.http.get('https://zolucky.onrender.com/user/getListPrizes', {
+    this.http.get('http://localhost:8080/user/getListPrizes', {
     }).subscribe(data => {
       //console.log(this.listPrizes)
       this.listPrizes= JSON.parse(JSON.stringify(data))['listPrizes'];
@@ -267,7 +267,7 @@ events(opts:any) {
         }
     }
     function postUpdateSpin(id:any){
-      http.post('http://localhost:3000/user/updateSpin', {
+      http.post('https://zolucky.onrender.com/user/updateSpin', {
         id,
       },{
         withCredentials: true
@@ -357,5 +357,11 @@ spin(listPrizes:any) {
       prizes : listPrizes, 
     });
 }
-
+// reloadData():void {
+//   this.http.get('https://zolucky.onrender.com/user/profile', {
+//     withCredentials: true
+//   }).subscribe(data => {
+//     this.data = JSON.parse(JSON.stringify(data))['user'];
+//   })
+// }
 }
