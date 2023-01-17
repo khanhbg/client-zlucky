@@ -31,12 +31,10 @@ export class LuckyWheelComponent {
     // this.spin() 
     if (localStorage.getItem('role') != null && document.cookie.length > 0) this.isLogin = true;
      this.getListPrize()
-    //this.postUpdateSpin(2)
-    
+    //this.postUpdateSpin(2)  
   }
   getListPrize(){
-    this.http.get('https://zolucky.onrender.com/user/getListPrizes', {
-    }).subscribe(data => {
+    this.http.get('https://zolucky.onrender.com/user/getListPrizes',{withCredentials: true}).subscribe(data => {
       //console.log(this.listPrizes)
       this.listPrizes= JSON.parse(JSON.stringify(data))['listPrizes'];
       this.spin(this.listPrizes)
