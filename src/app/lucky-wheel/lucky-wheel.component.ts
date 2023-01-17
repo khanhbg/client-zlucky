@@ -265,12 +265,12 @@ events(opts:any) {
         }
     }
     function postUpdateSpin(id:any){
-      http.post('http://localhost:3000/user/updateSpin', {  
+      http.post('https://zolucky.onrender.com/user/updateSpin', {  
         id,
       },{
         withCredentials: true
       }).subscribe(data => {
-        console.log(data)
+       
         
       })
     }
