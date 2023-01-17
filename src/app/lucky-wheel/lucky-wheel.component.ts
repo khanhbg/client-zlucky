@@ -267,7 +267,7 @@ events(opts:any) {
         }
     }
     function postUpdateSpin(id:any){
-      http.post('https://zolucky.onrender.com/user/updateSpin', {
+      http.post('http://localhost:3000/user/updateSpin', {  
         id,
       },{
         withCredentials: true
