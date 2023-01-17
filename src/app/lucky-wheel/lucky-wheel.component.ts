@@ -301,6 +301,7 @@ events(opts:any) {
     deg = deg + (360 - (deg % 360)) + (360 * 10 - prizeId * (360 / num));
     // runRotate(deg);
     container.style[transform] = "rotate(" + deg + "deg)"
+    postUpdateSpin(opts.prizes[prizeId].id)
     bind(container, transitionEnd, function(){
       if ( prizeId == null) {
         return fnGotBack(null);
@@ -311,7 +312,6 @@ events(opts:any) {
          return prizeId
       }
     });
-    postUpdateSpin(opts.prizes[prizeId].id)
     })
     //updateSpin(prizeId)
   }
