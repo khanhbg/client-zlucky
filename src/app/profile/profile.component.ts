@@ -17,13 +17,12 @@ export class ProfileComponent implements OnInit {
   }
 
   reloadData():void {
-    this.http.post('https://zolucky.onrender.com/user/profile', {  
-      userId:localStorage.getItem('userId')
-    },{
-      withCredentials: true
+    this.http.post('https://zolucky.onrender.com/user/profile',{  
+      userId:localStorage.getItem('userId'),
     }).subscribe(data => {
-     
-      
+      console.log(data)
+      this.data = JSON.parse(JSON.stringify(data))['profile'];
+      console.log(this.data)
     })
   }
   update():void{
