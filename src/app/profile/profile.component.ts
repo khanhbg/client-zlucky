@@ -24,7 +24,19 @@ export class ProfileComponent implements OnInit {
     })
   }
   update():void{
-    
+    this.http.post<any>('https://zolucky.onrender.com/user/updateProfile', {
+      userId:localStorage.getItem('userId'),
+      userName: this.data.userName,
+      phoneNumber: this.data.phoneNumber,
+      email:this.data.email
+    }, {
+      withCredentials: true
+    }).subscribe(data => {
+      window.alert(data.message)
+      if (data.code == 0) {
+        this.router.navigateByUrl('/profile')
+      }
+    })
   }
- 
+    
 }
