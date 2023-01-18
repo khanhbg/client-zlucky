@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
   }
 
   reloadData():void {
-    this.http.post('https://zolucky.onrender.com/user/updateSpin', {  
+    this.http.post('https://zolucky.onrender.com/user/profile', {  
       userId:localStorage.getItem('userId')
     },{
       withCredentials: true
