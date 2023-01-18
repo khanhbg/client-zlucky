@@ -14,6 +14,7 @@ export class TimelineComponent implements OnInit {
     if (localStorage.getItem('role') == null || document.cookie.length == 0) this.router.navigateByUrl('/home');
     // (document.getElementById('begin_date') as HTMLInputElement).value = new Date().toISOString().substring(0, 10);
     // (document.getElementById('end_date') as HTMLInputElement).value = new Date().toISOString().substring(0, 10);
+    console.log("abc")
     this.reloadData()
   }
   reloadData() {
