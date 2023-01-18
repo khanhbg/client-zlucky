@@ -12,15 +12,15 @@ export class ProfileComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
-    //if (localStorage.getItem('role') == null || document.cookie.length == 0) this.router.navigateByUrl('/home');
-    //this.reloadData()
+    if (localStorage.getItem('role') == null || document.cookie.length == 0) this.router.navigateByUrl('/home');
+    this.reloadData()
   }
 
   reloadData():void {
-    this.http.get('http://localhost:3000/user/profile', {
+    this.http.get('https://zolucky.onrender.com/user/profile', {
       withCredentials: true
     }).subscribe(data => {
-      this.data = JSON.parse(JSON.stringify(data))['user'];
+      this.data = JSON.parse(JSON.stringify(data))['profile'];
     })
   }
   update():void{
