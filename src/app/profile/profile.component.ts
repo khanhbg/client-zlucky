@@ -38,5 +38,8 @@ export class ProfileComponent implements OnInit {
       }
     })
   }
+  click():void{
+    window.alert("Đăng ký thành công!");
+  }
     
 }
