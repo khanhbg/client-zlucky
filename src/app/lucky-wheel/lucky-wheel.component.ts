@@ -211,6 +211,7 @@ draw = (opts:any):any => {
     alert(msg);
   }
 events(opts:any) {
+  let data
   let http=this.http
   let isLogin= this.isLogin
   let isPercentage=this.isPercentage
@@ -270,10 +271,16 @@ events(opts:any) {
         userId
       },{
         withCredentials: true
-      }).subscribe(data => {
-       
-        
+      }).subscribe(data => {      
       })
+    }
+    function numberGame(userId:any):any{
+      http.post('https://zolucky.onrender.com/user/profile',{  
+      userId
+    }).subscribe(data => {
+     return JSON.parse(JSON.stringify(data))['profile'];
+
+    })
     }
     let router=this.router
     let btn = this.btn;
@@ -290,6 +297,11 @@ events(opts:any) {
       if(!isLogin){
         window.alert("Xin vui lòng đăng nhập để tiếp tục!")
         router.navigateByUrl('/login');
+        return
+      }
+      if(numberGame(localStorage.getItem('userId')) ==0){
+        window.alert("Bạn đã hết lượt quay")
+        //router.navigateByUrl('/login');
         return
       }
     addClass(btn, "disabled");

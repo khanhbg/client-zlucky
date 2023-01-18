@@ -1,0 +1,73 @@
+<app-header></app-header>
+<main style="padding-top: 63px; background-color: ghostwhite; padding-bottom: 50px;">
+    <div class="container-fluid container-lg pt-3 pb-3 border-bottom px-lg-5">
+        <div class="row justify-content-md-center mt-3 minimum-heigh">
+            <div class="col-md-4 col-lg-3 pr-0 bg-white justify-content-center">
+                <div class=" user-sidebar sidebar-md " style="margin-top: 50px">
+                    <ul class="navbar-nav " aria-labelledby="">
+                        <li class="nav-item">
+                            <div class="user-brief ">
+                                <div class="d-flex flex-column align-self-center user-brief_right m-md-1">
+                                    <div class="text-muted text-sm d-none d-md-flex ">
+                                        <a href="profile" class="text-decoration-none" style="color: black !important;">
+                                            <i class="fa fa-edit"></i>
+                                            Sửa hồ sơ
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <div class="row ">
+                            <div class="m-2 col-lg-7 col-7 menu-items">
+                                <li class="mb-1" style="color: #93a3b5 !important;">
+                                    <i class="fa fa-user-circle">
+                                        <a href="" style="color: #93a3b5 !important;" routerLink="/profile">Thông tin
+                                            tài khoản</a>
+                                    </i>
+                                </li>
+                                <li class="mb-1" style="color: #93a3b5 !important;">
+                                    <i class="fa fa-clock-o">
+                                        <a href="" routerLink="/timeline" style="color: #93a3b5 !important;">Lịch của
+                                            tôi</a>
+                                    </i>
+                                </li>
+                                <li class="mb-1" style="color: #93a3b5 !important;">
+                                    <i class="fa fa-unlock-alt">
+                                        <a href="" style="color: #93a3b5 !important;" routerLink="/repassword">Đổi mật
+                                            khẩu</a>
+                                    </i>
+                                </li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8 col-lg-9 pl-3 pr-3">
+                <div class="user-page-content">
+                </div>
+                <div class="container" style="border-bottom: 1px solid;">
+                    <div class="table-rankings">
+                        <table
+                            class="table table-responsive-lg text-gray-700 table-striped table-borderless table-hover pd-2">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Giải thưởng</th>
+                                    <th scope="col">Trạng thái</th>
+                                    <th scope="col">Thời gian quay</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of listWin">
+                                    {{item}}
+                                    <!-- <td>{{item.r_prizeId.prizesName]}}</td> -->
+                                    <!-- <td>{{item.status}}</td>
+                                    <td>{{item.createdAt}}</td> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
