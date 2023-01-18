@@ -20,7 +20,9 @@ export class ProfileComponent implements OnInit {
     this.http.get('https://zolucky.onrender.com/user/profile', {
       withCredentials: true
     }).subscribe(data => {
+      console.log(data)
       this.data = JSON.parse(JSON.stringify(data))['profile'];
+      console.log
     })
   }
   update():void{
