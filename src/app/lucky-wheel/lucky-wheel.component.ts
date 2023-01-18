@@ -264,9 +264,10 @@ events(opts:any) {
           }
         }
     }
-    function postUpdateSpin(prizeId:any){
+    function postUpdateSpin(prizeId:any,userId:any){
       http.post('https://zolucky.onrender.com/user/updateSpin', {  
         prizeId,
+        userId
       },{
         withCredentials: true
       }).subscribe(data => {
@@ -299,7 +300,7 @@ events(opts:any) {
     deg = deg + (360 - (deg % 360)) + (360 * 10 - prizeId * (360 / num));
     // runRotate(deg);
     container.style[transform] = "rotate(" + deg + "deg)"
-    postUpdateSpin(opts.prizes[prizeId].id)
+    postUpdateSpin(opts.prizes[prizeId].id,localStorage.getItem('userId'))
     bind(container, transitionEnd, function(){
       if ( prizeId == null) {
         return fnGotBack(null);
