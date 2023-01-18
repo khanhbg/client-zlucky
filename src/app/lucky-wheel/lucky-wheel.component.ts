@@ -264,9 +264,9 @@ events(opts:any) {
           }
         }
     }
-    function postUpdateSpin(id:any){
+    function postUpdateSpin(prizeId:any){
       http.post('https://zolucky.onrender.com/user/updateSpin', {  
-        id,
+        prizeId,
       },{
         withCredentials: true
       }).subscribe(data => {
