@@ -20,6 +20,7 @@ export class TimelineComponent implements OnInit {
     this.http.post('https://zolucky.onrender.com/user/listWin',{  
       userId:localStorage.getItem('userId'),
     }).subscribe(data => {
+      console.log(data)
      this.listWin = JSON.parse(JSON.stringify(data))['listWinPrizes'];
      console.log(this.listWin)
     })
