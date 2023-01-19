@@ -12,8 +12,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'luckyWheel', component: LuckyWheelComponent},
   { path: 'profile', component: ProfileComponent},
-  { path: 'profile', component: ProfileComponent},
-  { path: 'timeline', component: ProfileComponent},
+  { path: 'timeline', component: TimelineComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

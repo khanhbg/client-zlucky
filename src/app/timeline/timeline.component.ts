@@ -15,7 +15,7 @@ export class TimelineComponent implements OnInit {
     // (document.getElementById('begin_date') as HTMLInputElement).value = new Date().toISOString().substring(0, 10);
     // (document.getElementById('end_date') as HTMLInputElement).value = new Date().toISOString().substring(0, 10);
     console.log("abc")
-    //this.reloadData()
+    this.reloadData()
   }
   reloadData() {
     this.http.post('https://zolucky.onrender.com/user/listWin',{  
