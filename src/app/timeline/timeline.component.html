@@ -57,7 +57,9 @@
                             </thead>
                             <tbody>
                                 <tr *ngFor="let item of listWin">
-                                  <td>{{item.status}}</td>
+                                    <td>{{item['r_prizeId.prizesName']}}</td>
+                                    <td>{{item.status}}</td>
+                                    <td>{{item.createdAt}}</td>
                                 </tr>
                             </tbody>
                         </table>
