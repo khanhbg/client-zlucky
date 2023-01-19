@@ -18,6 +18,9 @@
                     <a class="nav-link" routerLink="/luckyWheel">Quay thưởng</a>
                 </li>
                 <li class="nav-item ">
+                    <label *ngIf="isLogin==true">Lượt quay: {{numberGame.numberGame}}</label>
+                </li>
+                <li class="nav-item ">
                     <a class="nav-link" *ngIf="isLogin==true" (click)="logout()" >Đăng xuất</a>
                 </li>
                 <li class="nav-item">
