@@ -135,9 +135,9 @@ draw = (opts:any):any => {
             html.push(this.transform + ": rotate(" + i * turnNum + 'turn)">');
             if (opts.mode == "both") {
               html.push("<p id='curve' style='margin: 0;padding: 0' >" + prizeList[i].prizesName + "</p>");
-              html.push('<img style="position: relative; padding-top:10px; top: -20px; left: 0px; width: 90px;height: 90px" src="' + prizeList[i].image + '" />');
+              html.push('<img style="position: relative; padding-top:20px; top: -20px; left: 0px; width: 100px;height: 100px" src="' + prizeList[i].image + '" />');
             } else if (prizeList[i].image) {
-              html.push('<img style="position: relative;padding-top:10px; top: -20px; left: 0px; width: 90px;height: 90px" src="' + prizeList[i].image + '" />');
+              html.push('<img style="position: relative;padding-top:20px; top: -20px; left: 0px; width: 100px;height: 100px" src="' + prizeList[i].image + '" />');
             } else {
               html.push('<p style="margin: 0;padding: 0" id="curve">' + prizeList[i].prizesName + "</p>");
             }
