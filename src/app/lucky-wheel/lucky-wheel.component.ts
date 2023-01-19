@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./lucky-wheel.component.css']
 })
 export class LuckyWheelComponent {
+  numberGame:any
   isLogin=false
   oldPass:any
   public da:any
@@ -30,8 +31,15 @@ export class LuckyWheelComponent {
   ngOnInit(): void {
     // this.spin() 
     if (localStorage.getItem('role') != null && document.cookie.length > 0) this.isLogin = true;
+    this.getNumberGame()
      this.getListPrize()
     //this.postUpdateSpin(2)  
+  }
+  getNumberGame(){
+    this.http.post('https://zolucky.onrender.com/numberGame',{withCredentials: true}).subscribe(data => {
+      //console.log(this.listPrizes)
+      this.numberGame= (JSON.parse(JSON.stringify(data))['user']);
+    })
   }
   getListPrize(){
     this.http.get('https://zolucky.onrender.com/user/getListPrizes',{withCredentials: true}).subscribe(data => {
