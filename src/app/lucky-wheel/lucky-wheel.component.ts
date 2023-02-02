@@ -31,18 +31,12 @@ export class LuckyWheelComponent {
   ngOnInit(): void {
     // this.spin() 
     if (localStorage.getItem('role') != null && document.cookie.length > 0) this.isLogin = true;
-    this.getNumberGame()
      this.getListPrize()
     //this.postUpdateSpin(2)  
   }
-  getNumberGame(){
-    this.http.post('https://zolucky.onrender.com/numberGame',{withCredentials: true}).subscribe(data => {
-      //console.log(this.listPrizes)
-      this.numberGame= (JSON.parse(JSON.stringify(data))['user']);
-    })
-  }
+ 
   getListPrize(){
-    this.http.get('https://zolucky.onrender.com/user/getListPrizes',{withCredentials: true}).subscribe(data => {
+    this.http.get('http://14.225.205.12:3000/user/getListPrizes',{withCredentials: true}).subscribe(data => {
       //console.log(this.listPrizes)
       this.listPrizes= JSON.parse(JSON.stringify(data))['listPrizes'];
       this.spin(this.listPrizes)
@@ -274,7 +268,7 @@ events(opts:any) {
         }
     }
     function postUpdateSpin(prizeId:any,userId:any){
-      http.post('https://zolucky.onrender.com/user/updateSpin', {  
+      http.post('http://14.225.205.12:3000/user/updateSpin', {  
         prizeId,
         userId
       },{
@@ -283,7 +277,7 @@ events(opts:any) {
       })
     }
     function numberGame(userId:any):any{
-      http.post('https://zolucky.onrender.com/user/profile',{  
+      http.post('http://14.225.205.12:3000/user/profile',{  
       userId
     }).subscribe(data => {
      return JSON.parse(JSON.stringify(data))['profile'];

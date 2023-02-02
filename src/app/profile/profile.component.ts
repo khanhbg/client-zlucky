@@ -17,14 +17,14 @@ export class ProfileComponent implements OnInit {
   }
 
   reloadData():void {
-    this.http.post('https://zolucky.onrender.com/user/profile',{  
+    this.http.post('http://14.225.205.12:3000/user/profile',{  
       userId:localStorage.getItem('userId'),
     }).subscribe(data => {
       this.data = JSON.parse(JSON.stringify(data))['profile'];
     })
   }
   update():void{
-    this.http.post<any>('https://zolucky.onrender.com/user/updateProfile', {
+    this.http.post<any>('http://14.225.205.12:3000/user/updateProfile', {
       userId:localStorage.getItem('userId'),
       userName: this.data.userName,
       phoneNumber: this.data.phoneNumber,

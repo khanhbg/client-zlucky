@@ -18,7 +18,7 @@ export class TimelineComponent implements OnInit {
     this.reloadData()
   }
   reloadData() {
-    this.http.post('https://zolucky.onrender.com/user/listWin',{  
+    this.http.post('http://14.225.205.12:3000/user/listWin',{  
       userId:localStorage.getItem('userId'),
     }).subscribe(data => {
       console.log(data)

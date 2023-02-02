@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
         window.alert("Xác nhận mật khẩu chưa khớp!");
         return
       }
-      this.http.post<any>('http://localhost:3000/user/register', {
+      this.http.post<any>('http://14.225.205.12:3000/user/register', {
         withCredentials: true,
         userName: userName.value,
         email:email.value,
