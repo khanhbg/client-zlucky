@@ -30,13 +30,16 @@ export class LuckyWheelComponent {
 
   ngOnInit(): void {
     // this.spin() 
-    if (localStorage.getItem('role') != null && document.cookie.length > 0) this.isLogin = true;
-     this.getListPrize()
+    if (document.cookie.length == 0 || this.isLogin == false){
+      this.router.navigateByUrl('/home')
+    };
+    this.getListPrize()
     //this.postUpdateSpin(2)  
   }
  
   getListPrize(){
-    this.http.get('http://14.225.205.12:3000/user/getListPrizes',{withCredentials: true}).subscribe(data => {
+    this.http.get('http://14.225.205.12:3000/user/getListPrizes',
+    {withCredentials: true}).subscribe(data => {
       //console.log(this.listPrizes)
       this.listPrizes= JSON.parse(JSON.stringify(data))['listPrizes'];
       this.spin(this.listPrizes)
@@ -279,6 +282,8 @@ events(opts:any) {
     function numberGame(userId:any):any{
       http.post('http://14.225.205.12:3000/user/profile',{  
       userId
+    },{
+      withCredentials: true
     }).subscribe(data => {
      return JSON.parse(JSON.stringify(data))['profile'];
 
