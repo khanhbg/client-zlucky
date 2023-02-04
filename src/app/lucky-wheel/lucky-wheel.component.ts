@@ -30,9 +30,9 @@ export class LuckyWheelComponent {
 
   ngOnInit(): void {
     // this.spin() 
-    if (document.cookie.length == 0 || this.isLogin == false){
-      this.router.navigateByUrl('/home')
-    };
+    // if (document.cookie.length == 0 || this.isLogin == false){
+    //   this.router.navigateByUrl('/home')
+    // };
     this.getListPrize()
     //this.postUpdateSpin(2)  
   }
