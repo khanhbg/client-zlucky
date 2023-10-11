@@ -1,13 +1,13 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 <main class="bg">
-
+    <div class= "numberGame" *ngIf="isLogin==true"><label >Lượt chơi: {{numberGame}}</label></div>
     <div class="wrapper-typo" id="wrapper">
         <section id="luckywheel" class="hc-luckywheel">
             <!-- <input type="password" class="form-control" [(ngModel)]="oldPass"> -->
             <div class="hc-luckywheel-container">
                 <canvas class="hc-luckywheel-canvas" width="500px" height="500px">Vòng Xoay May Mắn</canvas>
             </div>
-            <a class="hc-luckywheel-btn" href="javascript:;">Xoay</a>
+            <a class= "hc-luckywheel-btn" (click)="spin()" >Xoay</a>
         </section>
     </div>
 </main>

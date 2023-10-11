@@ -18,6 +18,20 @@ export class LoginComponent implements OnInit {
     try {
       let phoneNumber = document.getElementById("login_phoneNumber") as HTMLInputElement;
       let password = document.getElementById("login_password") as HTMLInputElement;
+      let phoneFormat = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+      if (phoneNumber.value=="") {
+        window.alert("Vui lòng nhập số điện thoại!");
+        return
+      }
+      if (!phoneNumber.value.match(phoneFormat)) {
+        window.alert("Số điện thoại không đúng định dạng");
+        return
+      }
+      if (password.value=="") {
+        window.alert("Vui lòng nhập mật khẩu!");
+        return
+      }
+      
       this.http.post<any>('http://14.225.205.12:3000/user/login', {
         phoneNumber: phoneNumber.value,
         password: password.value,

@@ -6,6 +6,7 @@ import { HomeComponent } from '../app/home/home.component';
 import { RegisterComponent } from '../app/register/register.component';
 import {ProfileComponent} from '../app/profile/profile.component';
 import {TimelineComponent} from '../app/timeline/timeline.component';
+import {MissionComponent} from '../app/mission/mission.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'luckyWheel', component: LuckyWheelComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'timeline', component: TimelineComponent},
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'mission', component: MissionComponent},
+  { path: '', redirectTo: 'luckyWheel', pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -1,11 +1,16 @@
 
+/* 
 .hc-luckywheel ul,
 .hc-luckywheel li {
   margin: 0;
   padding: 0;
   list-style: none;
+} */
+.numberGame {
+  background-color: #ccc;
+  width: 110px; 
+  height: 26px; 
 }
-
 .hc-luckywheel {
   position: relative;
   width: 500px; /*Change this when change size*/
@@ -46,6 +51,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  margin-bottom: 0rem;
   width: inherit;
   height: inherit;
   z-index: 2;
@@ -124,12 +130,16 @@
 .hc-luckywheel-btn.disabled::after {
   border-bottom-color: #b07a7b;
 }
-
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 0rem;
+}
 main{ margin:0; padding:0; height:100vh; width:100%; }
 
 .bg {
-  background-image: url('../../assets/images/bg.png');
-  background-position: center center;
+  background-image: url('../../assets/images/bg1.jpg');
+  background-position: center;
   background-size: cover;
 }
 .bg {

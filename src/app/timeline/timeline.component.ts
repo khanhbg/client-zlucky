@@ -14,16 +14,16 @@ export class TimelineComponent implements OnInit {
     if (localStorage.getItem('role') == null || document.cookie.length == 0) this.router.navigateByUrl('/home');
     // (document.getElementById('begin_date') as HTMLInputElement).value = new Date().toISOString().substring(0, 10);
     // (document.getElementById('end_date') as HTMLInputElement).value = new Date().toISOString().substring(0, 10);
-    console.log("abc")
+    //console.log("abc")
     this.reloadData()
   }
   reloadData() {
     this.http.post('http://14.225.205.12:3000/user/listWin',{  
       userId:localStorage.getItem('userId'),
     }).subscribe(data => {
-      console.log(data)
+      //console.log(data)
      this.listWin = JSON.parse(JSON.stringify(data))['listWinPrizes'];
-     console.log(this.listWin)
+     //console.log(this.listWin)
     })
   }
   

@@ -15,21 +15,18 @@ export class HeaderComponent {
   ngOnInit(): void {
     if (localStorage.getItem('role') != null && document.cookie.length > 0) this.isLogin = true;
     if (localStorage.getItem('role') != null) this.role = localStorage.getItem('role');
-    if(this.isLogin){
-      this.getNumberGame()
-    }
     this.currentUrl= this.router.url;
   }
   logout() {
     document.cookie = "; path=/;";
     localStorage.clear();
     this.isLogin=false
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/login');
   }
-  getNumberGame(){
-    this.http.post('https://zolucky.onrender.com/numberGame',{userId:localStorage.getItem('userId'),},{withCredentials: true}).subscribe(data => {  
-      //console.log(this.listPrizes)
-      this.numberGame= (JSON.parse(JSON.stringify(data))['user']);
-    })
-  }
+  // getNumberGame(){
+  //   this.http.post('https://zolucky.onrender.com/numberGame',{userId:localStorage.getItem('userId'),},{withCredentials: true}).subscribe(data => {  
+  //     //console.log(this.listPrizes)
+  //     this.numberGame= (JSON.parse(JSON.stringify(data))['user']);
+  //   })
+  // }
 }

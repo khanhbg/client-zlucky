@@ -12,7 +12,7 @@ export class ProfileComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
-    if (localStorage.getItem('role') == null || document.cookie.length == 0) this.router.navigateByUrl('/home');
+    if (localStorage.getItem('role') == null || document.cookie.length == 0) this.router.navigateByUrl('/login');
     this.reloadData()
   }
 

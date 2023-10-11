@@ -1,0 +1,28 @@
+.attendance{
+    width: 60px;   
+    float: left;   
+    text-align: center;
+    margin: 5px;
+}
+.list_attendance{
+    height: 100px;
+    width: 500px;
+    background-color: aqua;
+    margin-left: 20%;
+
+}
+.mission{
+    height: 400px;
+    width: 100%;
+}
+.btn_attendance{
+    left: 60%;
+
+}
+.bonus{
+    background-color: white;
+}
+.btn{
+    height: 400px;
+    width: 100%;
+}
